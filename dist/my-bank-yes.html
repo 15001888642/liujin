@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>六斤金融</title>
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<div class="main">
+		<div class="my-bank">
+			<div class="my-bank-name">
+				<div class="my-bank-logo"><img src="images/bank/gongshang.png"/></div>
+				<span>工商银行</span>
+			</div>
+			<div class="bank-del"><img src="images/bank-del.png"/></div>
+			<div class="my-bank-num">6225********4098</div>
+			<div class="my-bank-people">持卡人：**晓</div>
+			<div class="my-bank-people">银行预留手机号：136*******09</div>
+			<div class="my-bank-people">开户行所在地：上海 静安</div>
+		</div>
+		<div class="my-bank-btn">
+			<a class="btn-q2" href="javascript:">添加银行卡</a>
+		</div>	
+	</div>
+	<script src="js/modules/jquery.min.js"></script>
+	<script src="js/modules/layer.js"></script>
+	<script>
+		$(".bank-del").click(function(){
+			layer.open({
+			    content: '是否删除此银行卡',
+			    btn: ['确认', '取消'],
+			});
+		})
+	</script>
+</body>
+</html>

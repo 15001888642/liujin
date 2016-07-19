@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>六斤金融</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="js/modules/echarts.min.js"></script>
+</head>
+<body>
+	<div class="tabbar">
+		<div class="ftab-li ftab-li1 active"><span>项目详情</span></div>
+		<div class="ftab-li ftab-li2"><span>收益详情</span></div>
+		<div class="ftab-li ftab-li3"><span>投资说明</span></div>
+	</div>
+	<div class="main">
+		<div class="ftab-con ftab-con1">
+			<div class="fx-sy">
+				<div class="tx-t1">预期年化收益率</div>
+				<div class="tx-t2"><span>3</span>%~<span>15</span>%</div>
+				<div class="tx-t3">
+					<p class="tx-t4-t">募集资金</p>
+					<p>50万元</p>
+				</div>
+				<!--<div class="tx-t4">
+					<p class="tx-t4-t">参与人数</p>
+					<p>15人</p>
+				</div>-->
+				<div class="tx-t5">最长持有时间1年</div>
+				<img class="tx-t6" src="images/fd-2.png"/>
+			</div>
+			<div class="fx-name">六斤金融浮动盈第三期</div>
+			<div class="fx-time">封闭期：两个月</div>
+			<div class="fx-ts">特别提示：平台每三个月公示实时收益。</div>
+			<div class="fx-line"></div>
+			<div class="fx-tit">产品详情</div>
+			<div class="fx-xq">浮动盈是六斤金融最新推出的浮动收益理财产品，封闭期后可自由转让，同时浮动收益是根据实际借款人的投资收益30%计算。</div>
+		</div>
+		<div class="ftab-con ftab-con2 none">
+			<div class="sy-tit"><span>预期年化收益(%)</span> <a href="fudong-shuoming.html">收益说明</a></div>
+			<div id="sy-bar" style="height:160px;"></div>
+			<div class="fx-line"></div>
+			<div class="sy-ll">
+				<div class="sy-box">
+					<p>投资金额(元)</p>
+					<div class="sy-b1"><span>1000</span></div>
+					<div class="sy-b2">预期<span class="c-main">利率：15%</span></div>
+				</div>
+				<div class="sy-box">
+					<p>持有时间(月)</p>
+					<div class="sy-b1"><span>11</span></div>
+					<div class="sy-b2">预期<span class="c-main">利息：1500元</span></div>
+				</div>
+			</div>
+			<div class="fx-line"></div>
+			<div class="sy-txt">
+				<p>上述例子提到的预期利率，计算方法如下：</p>
+				<p>预期利率=(固定利率+投资收益率*30%)＊11/12</p>
+				<p>当投资收益率=40%</p>
+				<p>预期利率=(3%+40%*30%)＊11/12=14％</p>
+			</div>
+			<div class="sy-ts">* 上述例子仅供参考</div>
+		</div>
+		<div class="ftab-con ftab-con3 none">
+			<div class="fx-line"></div>
+			<div class="tz-list">
+				<div class="tz-tit">起投金额</div>
+				<div class="tz-xq"><span class="hundred-num">1000</span>元起投，以整数倍递增</div>
+			</div>
+			<div class="tz-list">
+				<div class="tz-tit">投资上限</div>
+				<div class="tz-xq">无</div>
+			</div>
+			<div class="tz-list">
+				<div class="tz-tit">起息时间</div>
+				<div class="tz-xq">满标T+1个工作日计息</div>
+			</div>
+			<div class="tz-list">
+				<div class="tz-tit">计息方式</div>
+				<div class="tz-xq">每日计息</div>
+			</div>
+			<div class="tz-list">
+				<div class="tz-tit">付息时间</div>
+				<div class="tz-xq">到期还本付息</div>
+			</div>
+			<div class="tz-list">
+				<div class="tz-tit">到期时间</div>
+				<div class="tz-xq">满标计息后的11个月</div>
+			</div>
+			<div class="tz-list">
+				<div class="tz-tit">投资协议</div>
+				<div class="tz-xq">点击查看<a href="fudong-xieyi.html">《投资协议范本》</a></div>
+			</div>
+			<div class="fx-line"></div>
+			<div class="sy-sm sy-sm2">
+				<p>投资前，请确认完成实名认证</p>
+				<p>并成功设置支付密码</p>
+			</div>
+			<a class="tz-btn ms-btn" href="javascript:">马上投资</a>
+		</div>
+	</div>
+	<div class="layermbox layermbox0 fd-layer none">
+		<div class="laymshade"></div>
+		<div class="layermmain">
+			<div class="section">
+				<div class="layermchild  layermanim">
+					<div class="layermcont">
+						<div class="login-list">
+							<div class="login-name">投资金额</div>
+							<div class="login-form"><input class="login-text login-sp1 hundred" type="number" placeholder="请输入投资金额"/></div>
+						</div>
+						<div class="login-list">
+							<div class="login-name">支付密码</div>
+							<div class="login-form"><input class="login-text login-sp2" type="password" placeholder="请输入支付密码"/></div>
+						</div>
+					</div>
+					<div class="layermbtn">
+						<span type="1"><a class="tx-bank-a ms-close" href="#">取消</a></span>
+						<span type="2"><a class="tx-bank-a active buy-ok" href="#">确定</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/modules/jquery.min.js"></script>
+	<script src="js/modules/layer.js"></script>
+	<script>
+    //判断100倍数
+    $('.buy-ok').click(function(){
+		var bei=parseInt($(".hundred-num").html())
+		var hu=$(".hundred").val()
+		if(hu!=0 && hu%bei===0){
+			$(".layermbox").addClass("none")
+		}
+		else{
+			layer.open({
+			    content: '金额必须是'+bei+'的整倍数',
+			    time: 2
+			});
+		}
+	})
+    
+    $('.ms-btn').click(function(){
+		$(".layermbox").removeClass("none")
+	})
+	$('.ms-close').click(function(){
+		$(".layermbox").addClass("none")
+	})
+    
+    // 基于准备好的dom，初始化echarts实例
+    // 指定图表的配置项和数据
+    var optionbar = {
+        grid: {
+	        left: 0,
+	        top: 20,
+	        right: 0,
+	        bottom: 5,
+	        containLabel: true
+	    },
+        xAxis: {
+            data: ["1","2","3","4","5","6","7","8","9","10","11","12"],
+            splitLine: {
+	            lineStyle: {
+	            		color: ['#ccc'],
+	            		type: 'dashed',
+	            },
+	        },
+        },
+        yAxis: {
+        		splitLine: {
+	            show: false,
+	        },
+	        axisLabel: {
+                formatter: '{value}%'
+            },
+            max: 15,
+            splitNumber: 1,
+        },
+        series: [{
+            type: 'bar',
+            name: '销量',
+            type: 'bar',
+            data: [3.3, 4.5, 5.2, 6.7, 7.9, 8.7, 9, 9.55, 9.88, 10, 11, 14],
+            markPoint : {
+                symbol: 'circle',
+                symbolOffset: [0, -9],
+                data : [
+                    {
+                    		type : 'max', 
+                    		name: '最大值',
+                    		itemStyle: {
+							normal: {
+								color: 'rgba(0,0,0,0.0)',
+							},
+						},
+                    	},
+                ],
+                label: {
+					normal: {
+						textStyle: {
+							color: '#000',
+						},
+						formatter: '{c}%'
+					},
+				},
+                itemStyle: {
+					normal: {
+						color: 'rgba(128, 128, 128, 0.9)',
+					},
+				},
+            },
+            legendHoverLink: false,
+            silent: false,
+            barCategoryGap: '1',
+            itemStyle: {
+				normal: {
+					color: '#fbdce2',
+					label:{
+						show:false,
+					}
+				},
+			},
+        }]
+    };
+	//TAB
+	$(function(){
+		$(".ftab-li").click(function(){
+			var n=$(this).index()
+			$(".ftab-li").removeClass("active")
+			$(this).addClass("active")
+			$(".ftab-con").hide()
+			$(".ftab-con").eq(n).show()
+			var myChartbar = echarts.init(document.getElementById('sy-bar'));
+			myChartbar.setOption(optionbar);
+		})
+	})
+	</script>
+	<script src="js/main.js"></script>
+</body>
+</html>

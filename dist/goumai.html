@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>六斤金融</title>
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<div class="main">
+		<div class="tx-form gm-form">
+			<div class="tx-form-tit">投资金额：</div>
+			<div class="tx-form-con"><input class="tx-form-text" type="number" placeholder="请输入投资金额" /></div>
+		</div>
+		<div class="tx-form gm-form">
+			<div class="tx-form-tit">支付密码：</div>
+			<div class="tx-form-con"><input class="tx-form-text" type="number" placeholder="请输入支付密码" /></div>
+		</div>
+		<div class="tx-btn">
+			<input type="button" class="btn-q2 gm-btn" href="javascript:" value="确认投资">
+		</div>
+	</div>
+	<script src="js/modules/jquery.min.js"></script>
+	<script src="js/modules/layer.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+	$(".gm-btn").click(function(){
+		layer.open({
+		    content: '请输入正确的手机号',
+		    btn: ['确认充值','取消'],
+		    yes: function(){
+		        window.location.href='my-chongzhi.html'
+		    }
+		});
+	})
+	</script>
+</body>
+</html>

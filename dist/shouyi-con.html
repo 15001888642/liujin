@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>六斤金融</title>
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<div class="main">
+		<div class="tz-logo"><img src="images/logo.png"/></div>
+		<div class="sy-con">
+			<div class="sy-list sy-list2">
+				<div class="sy-list-top">
+					<div class="sy-list-tit">六斤宝11期</div>
+					<div class="sy-list-bq"><span>保</span><span>机构担保</span></div>
+				</div>
+				<div class="sy-list-box">
+					<div class="sy-list-l">
+						<div class="sy-list-name">借款金额</div>
+						<div class="sy-list-con">200,000元</div>
+					</div>
+					<div class="sy-list-l">
+						<div class="sy-list-name">合约期</div>
+						<div class="sy-list-con">一个月</div>
+					</div>
+					<div class="sy-list-l">
+						<div class="sy-list-name">预期收益</div>
+						<div class="sy-list-con">8%（年化）</div>
+					</div>
+				</div>
+				<div class="sy-jd">
+					<div class="sy-jdt" style="width: 20%;"></div>
+				</div>
+				<div class="sy-jds">50%</div>
+			</div>
+			<div class="sy-xq-tit">产品详情</div>
+			<ul class="sy-xq-list">
+				<li>
+					<div class="sy-xq-name">起投金额</div>
+					<div class="sy-xq-con"><span class="hundred-num">1000</span>元起投，以整数倍递增</div>
+				</li>
+				<li>
+					<div class="sy-xq-name">投资人数</div>
+					<div class="sy-xq-con">不限</div>
+				</li>
+				<li>
+					<div class="sy-xq-name">付息方式</div>
+					<div class="sy-xq-con">每日付息，到期还本</div>
+				</li>
+				<li>
+					<div class="sy-xq-name">计息时间</div>
+					<div class="sy-xq-con">2016-06-16</div>
+				</li>
+				<li>
+					<div class="sy-xq-name">首次付息时间</div>
+					<div class="sy-xq-con">2016-06-16</div>
+				</li>
+				<li>
+					<div class="sy-xq-name">保障方式</div>
+					<div class="sy-xq-con">风险准备金</div>
+				</li>
+			</ul>
+			<div class="sy-xq-t2">退出说明</div>
+			<ul class="sy-xq-list">
+				<li>
+					<div class="sy-xq-name">退出方式</div>
+					<div class="sy-xq-con">期满自动退出</div>
+				</li>
+				<li>
+					<div class="sy-xq-name">退出时间</div>
+					<div class="sy-xq-con">2016-06-16</div>
+				</li>
+			</ul>
+			<div class="sy-sm">
+				<p>投资前，请确认完成实名认证</p>
+				<p>并成功设置<a href="#">支付密码</a></p>
+			</div>
+			<a class="sy-btn sy-xq-btn ms-btn" href="javascript:">马上投资</a>
+		</div>
+	</div>
+	<div class="layermbox layermbox0 fd-layer none">
+		<div class="laymshade"></div>
+		<div class="layermmain">
+			<div class="section">
+				<div class="layermchild  layermanim">
+					<div class="layermcont">
+						<div class="login-list">
+							<div class="login-name">投资金额</div>
+							<div class="login-form"><input class="login-text login-sp1 hundred" type="number" placeholder="请输入投资金额"/></div>
+						</div>
+						<div class="login-list">
+							<div class="login-name">支付密码</div>
+							<div class="login-form"><input class="login-text login-sp2" type="password" placeholder="请输入支付密码"/></div>
+						</div>
+					</div>
+					<div class="layermbtn">
+						<span type="1"><a class="tx-bank-a ms-close" href="javascript:">取消</a></span>
+						<span type="2"><a class="tx-bank-a buy-ok active" href="javascript:">确定</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/modules/jquery.min.js"></script>
+	<script src="js/modules/layer.js"></script>
+	<script>
+	//判断100倍数
+    $('.buy-ok').click(function(){
+		var bei=parseInt($(".hundred-num").html())
+		var hu=$(".hundred").val()
+		if(hu!=0 && hu%bei===0){
+			$(".layermbox").addClass("none")
+		}
+		else{
+			layer.open({
+			    content: '金额必须是'+bei+'的整倍数',
+			    time: 2
+			});
+		}
+	})
+    
+	$('.ms-btn').click(function(){
+		$(".layermbox").removeClass("none")
+	})
+	$('.ms-close').click(function(){
+		$(".layermbox").addClass("none")
+	})
+	</script>
+</body>
+</html>

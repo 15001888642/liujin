@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>六斤金融</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/swiper-3.3.1.min.css"/>
+</head>
+<body>
+	<div class="buybar">
+		<div class="buy-left">
+			<div class="buy-txt">数量</div>
+			<div class="buy-box">
+				<div class="buy-min">-</div>
+				<input class="buy-num" type="number" value="1" readonly/>
+				<div class="buy-add">+</div>
+			</div>
+		</div>
+		<a href="javascript:" class="buy-btn ms-btn">投资免费拿</a>
+	</div>
+	<div class="main">
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide"><img src="images/linpin-c1.jpg"/></div>
+		        <div class="swiper-slide"><img src="images/linpin-c1.jpg"/></div>
+		        <div class="swiper-slide"><img src="images/linpin-c1.jpg"/></div>
+		    </div>
+		    <div class="swiper-pagination"></div>
+		</div>
+		<div class="li-con-m1">
+			<div class="li-con-tit">加州阳光宝宝泡泡浴</div>
+			<div class="li-con-price">市场价：<span class="li-con-h">120元</span></div>
+			<div class="li-con-js">纯植物精华提炼，无泪配方，温和不刺激不含硫酸钠，泡泡丰富细腻，持久，洗完后无需再用清水清洗，直接擦干，不油腻。</div>
+			<div class="li-con-qi clearfix">
+				<div class="lcq-tit">存入期限：</div>
+				<div class="lcq-list clearfix">
+					<div class="lcq-qi active" li-ll="0.033" li-yue="1" li-money="5000">1月期</div>
+					<div class="lcq-qi" li-ll="0.044" li-yue="3" li-money="4000">3月期</div>
+					<div class="lcq-qi" li-ll="0.50" li-yue="12" li-money="3000">6月期</div>
+				</div>
+			</div>
+			<div class=""></div>
+			<div class="li-con-tz clearfix">
+				<div class="lcq-tit">投资金额：</div>
+				<div><span class="lcq-num">1,200</span>元</div>
+			</div>
+			<div class="li-con-tzjs">
+				<p>存入本金：<span class="c-main"><span class="lcq-zong">1,200</span>元，</span>免费拿走商品</p>
+				<p>到期返还本金，还享额外收益：<span class="c-main"><span class="lcq-sy">666.88</span>元</span></p>
+				<p>购买本产品后，礼品将在5个工作日内寄出。</p>
+				<p>计息时间：满标后的t+1日开始</p>
+			</div>
+		</div>
+		<div class="li-con-m2">
+			<div class="lcm-list">
+				<div class="lcm-title">正品保障</div>
+				<div class="lcm-text">100%海外原装正品：所有商品均属海外生产或销售；因此，所赠送商品一律为100%海外原装正品。</div>
+			</div>
+			<div class="lcm-list">
+				<div class="lcm-title">包装与生产日期</div>
+				<div class="lcm-text">100%海外原装正品：所有商品均属海外生产或销售；因此，所赠送商品一律为100%海外原装正品。</div>
+			</div>
+			<div class="lcm-list">
+				<div class="lcm-title">发货时间与售后</div>
+				<div class="lcm-text">100%海外原装正品：所有商品均属海外生产或销售；因此，所赠送商品一律为100%海外原装正品。</div>
+			</div>
+			<div class="sy-sm sy-sm2">
+				<p>投资前，请确认完成实名认证</p>
+				<p>并成功设置支付密码</p>
+			</div>
+		</div>
+	</div>
+	<div class="layermbox layermbox0 fd-layer none">
+		<div class="laymshade"></div>
+		<div class="layermmain">
+			<div class="section">
+				<div class="layermchild  layermanim">
+					<div class="layermcont">
+						<div class="login-list">
+							<div class="login-name">支付密码</div>
+							<div class="login-form"><input class="login-text login-sp2" type="password" placeholder="请输入支付密码"/></div>
+						</div>
+					</div>
+					<div class="layermbtn">
+						<span type="1"><a class="tx-bank-a ms-close" href="#">取消</a></span>
+						<span type="2"><a class="tx-bank-a ms-close active" href="#">确定</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/modules/jquery.min.js"></script>
+	<script src="js/modules/swiper-3.3.1.jquery.min.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+		$('.ms-btn').click(function(){
+			$(".layermbox").removeClass("none")
+		})
+		$('.ms-close').click(function(){
+			$(".layermbox").addClass("none")
+		})
+		
+		var mySwiper = new Swiper ('.swiper-container', {
+		    loop: true,
+		    autoplay: 5000,
+		    pagination: '.swiper-pagination',
+	  	})
+		var q=$(".lcq-num").html()//取投资金额
+		var s=q.replace(/,/g, "")//去除逗号
+		var b=parseInt(s)//投资金额转换成数字
+		var all=b//投资金额
+		var ll=0//利率
+		var y=0//期限
+		var mo=0//期限
+		$(function(){
+			ll=$(".lcq-qi.active").attr("li-ll");
+			y=$(".lcq-qi.active").attr("li-yue");
+			mo=$(".lcq-qi.active").attr("li-money");
+			//选择期限
+			$(".lcq-qi").click(function(){
+				$('.lcq-qi').removeClass("active")
+				$(this).addClass("active")
+				ll = $(this).attr("li-ll");
+				y = $(this).attr("li-yue");
+				mo = $(this).attr("li-money");
+				var z=mo.toString().replace( /\B(?=(?:\d{3})+$)/g, ',' )
+				$(".lcq-num").html(z)
+				var num=$(".buy-num")
+				all=mo*num.val()//总投资金额
+				var zzz=all.toString().replace( /\B(?=(?:\d{3})+$)/g, ',' )//总投资金额加上逗号
+				$(".lcq-zong").html(zzz)
+				var sb=((all*ll)/12)*y
+				$(".lcq-sy").html(sb.toFixed(2))
+			})
+			//购买数量
+			$(".buy-min").click(function(){
+				var num=$(".buy-num")
+				num.val(parseInt(num.val())-1)
+				if(parseInt(num.val())<1){ 
+					num.val(1); 
+				}
+				all=b*num.val()//总投资金额
+				var z=all.toString().replace( /\B(?=(?:\d{3})+$)/g, ',' )//总投资金额加上逗号
+				$(".lcq-zong").html(z)
+				var sb=((all*ll)/12)*y
+				$(".lcq-sy").html(sb.toFixed(2))
+			})
+			$(".buy-add").click(function(){
+				var num=$(".buy-num")
+				num.val(parseInt(num.val())+1)
+				if(parseInt(num.val())>99){ 
+					num.val(99); 
+				}
+				all=b*num.val()//总投资金额
+				var z=all.toString().replace( /\B(?=(?:\d{3})+$)/g, ',' )//总投资金额加上逗号
+				$(".lcq-zong").html(z)
+				var sb=((all*ll)/12)*y
+				$(".lcq-sy").html(sb.toFixed(2))
+			})
+		})
+		
+	</script>
+</body>
+</html>

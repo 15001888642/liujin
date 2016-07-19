@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>六斤金融</title>
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<div class="main">
+		<div class="my-nb-tit">为保障资金安全，首次绑定需实名认证</div>
+		<ul class="my-nb-list">
+			<li>
+				<div class="my-nb-name">真实姓名</div>
+				<div class="my-nb-con"><input class="my-nb-text" type="text" placeholder="请输入您的真实姓名" /></div>
+			</li>
+			<li>
+				<div class="my-nb-name">身份证号</div>
+				<div class="my-nb-con"><input class="my-nb-text" type="text" placeholder="请输入您的身份证号码" /></div>
+			</li>
+		</ul>
+		<div class="my-nb-tit">为保障资金安全，充值资金只能通过原卡提现</div>
+		<ul class="my-nb-list">
+			<li>
+				<div class="my-nb-name">银行卡号</div>
+				<div class="my-nb-con"><input class="my-nb-text" type="text" placeholder="请填写本人银行卡密码" /></div>
+			</li>
+		</ul>
+		<div class="my-nb-tit">请填写银行预留手机号码</div>
+		<ul class="my-nb-list">
+			<li>
+				<div class="my-nb-name">手机号码</div>
+				<div class="my-nb-con"><input class="my-nb-text" type="text" placeholder="请填写银行预留号码" /></div>
+			</li>
+		</ul>
+		<div class="my-bank-btn">
+			<a class="btn-q2 zy-lodaing" href="javascript:">确定</a>
+		</div>	
+	</div>
+	<script src="js/modules/jquery.min.js"></script>
+	<script src="js/modules/layer.js"></script>
+	<script>
+		$(function(){
+			$(".zy-lodaing").click(function(){
+				layer.open({
+					content: '<img src="images/bank-lodaing.gif"/><div class="la-jz">验证中</div>',
+					shadeClose: false,
+				});
+			})
+		})
+	</script>
+</body>
+</html>

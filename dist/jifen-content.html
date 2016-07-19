@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>六斤金融</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/swiper-3.3.1.min.css"/>
+</head>
+<body>
+	<div class="buybar">
+		<div class="buy-left">
+			<div class="buy-txt">数量</div>
+			<div class="buy-box">
+				<div class="buy-min">-</div>
+				<input class="buy-num" type="number" value="1" readonly/>
+				<div class="buy-add">+</div>
+			</div>
+		</div>
+		<a href="javascript:" class="buy-btn jf-btn">积分兑换</a>
+	</div>
+	<div class="main">
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		        <div class="swiper-slide"><img src="images/linpin-c1.jpg"/></div>
+		        <div class="swiper-slide"><img src="images/linpin-c1.jpg"/></div>
+		        <div class="swiper-slide"><img src="images/linpin-c1.jpg"/></div>
+		    </div>
+		    <div class="swiper-pagination"></div>
+		</div>
+		<div class="li-con-m1">
+			<div class="li-con-tit">加州阳光宝宝泡泡浴</div>
+			<div class="jf-li-num">4600<span>积分</span></div>
+			<div class="li-con-price">市场参考价：<span class="c-main">120元</span></div>
+		</div>
+		<div class="jf-li-ms">商品描述</div>
+		<div class="jf-li-text">纯植物精华提炼，无泪配方，温和不刺激不含硫酸钠，泡泡丰富细腻，持久，洗完后无需再用清水清洗，直接擦干，不油腻。</div>
+	</div>
+	<script src="js/modules/jquery.min.js"></script>
+	<script src="js/modules/swiper-3.3.1.jquery.min.js"></script>
+	<script src="js/modules/layer.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+		var mySwiper = new Swiper ('.swiper-container', {
+		    loop: true,
+		    autoplay: 5000,
+		    pagination: '.swiper-pagination',
+	  	})
+
+		$(".jf-btn").click(function(){
+			layer.open({
+			    content: '兑换成功',
+			    btn: ['确认'],
+			});
+		})
+
+		$(function(){
+			//购买数量
+			$(".buy-min").click(function(){
+				var num=$(".buy-num")
+				num.val(parseInt(num.val())-1)
+				if(num.val()==0){
+					num.val(1)
+				}
+			})
+			$(".buy-add").click(function(){
+				var num=$(".buy-num")
+				num.val(parseInt(num.val())+1)
+			})
+		})
+		
+	</script>
+</body>
+</html>

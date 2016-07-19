@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>六斤金融</title>
+	<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<div class="login-main">
+		<div class="login-forget-top">
+			<div class="login-forget-li active">输入手机号</div>
+			<div class="login-forget-li">重置密码</div>
+			<div class="login-forget-li">修改成功</div>
+		</div>
+		<div class="login-list">
+			<div class="login-name">手机号</div>
+			<div class="login-form"><input class="login-text login-phone" type="text" value="13888888888" readonly/></div>
+		</div>
+		<div class="login-list">
+			<div class="login-name">验证码</div>
+			<div class="login-form"><input class="login-text login-sms" type="text" placeholder="请输入验证码"/></div>
+			<input type="button" class="send-sms" value="发送验证码" onclick="setsms(this)">
+		</div>
+		<div class="login-cz">
+			已同意并阅读<a href="#">《六斤金融注册协议》</a>
+		</div>
+		<div class="login-footer"><input id="login-next" class="login-btn login-next" type="button" value="下一步" disabled /></div>
+	</div>
+	<script src="js/modules/jquery.min.js"></script>
+	<script src="js/modules/layer.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>

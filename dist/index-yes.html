@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>六斤金融</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="js/modules/echarts.min.js"></script>
+</head>
+<body>
+	<div class="navbar">
+		<a class="active" href="#">
+			<div class="bar-icon bar-icon1"></div>
+			<p>首页</p>
+		</a>
+		<a href="#">
+			<div class="bar-icon bar-icon2"></div>
+			<p>投资</p>
+		</a>
+		<a href="#">
+			<div class="bar-icon bar-icon3"></div>
+			<p>我的</p>
+		</a>
+	</div>
+	<div class="main">
+		<div class="iyes-top">
+			<div class="iyes-zc">
+				<p class="iyes-name">总资产</p>
+				<p class="iyes-num">￥51010</p>
+			</div>
+			<div class="iyes-zc">
+				<p class="iyes-name">30年我的资产</p>
+				<p class="iyes-num">￥51010</p>
+			</div>
+		</div>
+		<div id="sy-echarts2" style="height:200px;"></div>
+		<div class="iyes-more">更多活动等你来</div>
+		<div class="iyes-list">
+			<a href="#"><img src="images/huodong-1.jpg"/></a>
+			<a href="#"><img src="images/huodong-2.jpg"/></a>
+			<a href="#"><img src="images/huodong-3.jpg"/></a>
+		</div>
+	</div>
+	<script type="text/javascript">
+        var myChart2 = echarts.init(document.getElementById('sy-echarts2'));
+        option2 = {
+		    color:['#4A90E2','#41CEB4'],
+		    legend: {
+		        data:[
+		        		{name:'六斤平台收益'},
+		        		{name:'银行活期收益'},
+		        		
+		        	],
+		        top:'7px',
+		        left:'10px',
+		        orient: 'vertical',
+		        z:20,
+		    },
+		    grid: {
+		        left: '20px',
+		        right: '20px',
+		        bottom: '3%',
+		        top: '40px',
+		        containLabel: true
+		    },
+		    xAxis : [
+		        {
+		            type : 'category',
+		            boundaryGap : false,
+		            splitLine: {
+			            show: false,
+			        },
+			        axisTick: {
+			            show: false,
+			        },
+		            data : ['今天','2020年','2022年','2024年','2026年','2028年','2030年']
+		        }
+		    ],
+		    yAxis : [
+		        {
+		            type : 'value',
+		            position:'right',
+		            name : '单位（万元）',
+		            splitLine: {
+			            show: false,
+			        },
+			        axisTick: {
+			            show: false,
+			        },
+			        splitNumber: 4,
+		        }
+		    ],
+		    series : [
+		        {
+		            name:'银行活期收益',
+		            type:'line',
+		            z:2,
+		            sampling: 'average',
+		            areaStyle: {
+		            		normal: {
+		            			color: '#4A90E2',
+		            			opacity:1,
+		            		},
+		            	},
+		            	lineStyle: {
+		            		normal: {
+		            			width:1,
+		            			color: '#4A90E2',
+		            		},
+		            	},
+		            	smooth: true,
+		            	symbol: 'none',
+		            data:[0.2, 0.6, 1, 1.4, 1.8, 2.2, 2.4]
+		        },
+		        {
+		            name:'六斤平台收益',
+		            type:'line',
+		            z:1,
+		            areaStyle: {
+		            		normal: {
+		            			color: '#41CEB4',
+		            			opacity:1,
+		            		},
+		            	},
+		            	lineStyle: {
+		            		normal: {
+		            			width:1,
+		            			color: '#41CEB4',
+		            		},
+		            	},
+		            	smooth: true,
+		            	symbol: 'none',
+		            data:[0.2, 0.8, 1.5, 2, 3, 4, 5],
+		        }
+		    ]
+		};
+        myChart2.setOption(option2);
+    </script>
+</body>
+</html>

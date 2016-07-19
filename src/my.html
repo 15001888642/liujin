@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>六斤金融</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/swiper-3.3.1.min.css"/>
+</head>
+<body>
+	<div class="navbar">
+		<a href="#">
+			<div class="bar-icon bar-icon1"></div>
+			<p>首页</p>
+		</a>
+		<a href="#">
+			<div class="bar-icon bar-icon2"></div>
+			<p>投资</p>
+		</a>
+		<a class="active" href="#">
+			<div class="bar-icon bar-icon3"></div>
+			<p>我的</p>
+		</a>
+		<a href="#">
+			<div class="bar-icon bar-icon4"></div>
+			<p>积分</p>
+		</a>
+	</div>
+	<div class="main">
+		<div class="bg-w my-swiper">
+			<div class="swiper-container">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide">
+			        		<div class="my-e-tit">王晓晓未来资产</div>
+			        		<div id="sy-echarts2" style="height:170px;"></div>
+			        </div>
+			        <div class="swiper-slide">
+							<div class="my-name">王晓晓</div>
+							<div class="my-tit">累计收益（元）</div>
+							<div class="my-shouyi">2500.00</div>
+							<div class="my-fq">
+								<div class="my-fq-li">
+									<div class="my-fq-tit">总资产</div>
+									<div class="my-fq-num">100,000</div>
+								</div>
+								<div class="my-fq-li">
+									<div class="my-fq-tit">可用余额</div>
+									<div class="my-fq-num">20,000</div>
+								</div>
+							</div>
+						
+			        </div>
+			    </div>
+			    <div class="swiper-pagination"></div>
+			</div>
+		</div>
+		<div class="my-cz">
+			<a class="my-cz-cz" href="#">充值</a>
+			<a class="my-cz-tx" href="#">提现</a>
+		</div>
+		<div class="my-list bg-w">
+			<a href="#">
+				<div class="my-list-icon"><img src="images/my-l1.png"/></div>
+				<div class="my-list-tit">投资记录</div>
+				<div class="my-list-r"><img src="images/my-more.png"/></div>
+			</a>
+			<a href="#">
+				<div class="my-list-icon"><img src="images/my-l2.png"/></div>
+				<div class="my-list-tit">充值记录</div>
+				<div class="my-list-r"><img src="images/my-more.png"/></div>
+			</a>
+			<a href="#">
+				<div class="my-list-icon"><img src="images/my-l3.png"/></div>
+				<div class="my-list-tit">提现历史</div>
+				<div class="my-list-r"><img src="images/my-more.png"/></div>
+			</a>
+			<a href="#">
+				<div class="my-list-icon"><img src="images/my-l4.png"/></div>
+				<div class="my-list-tit">联系客服</div>
+				<div class="my-list-r"><img src="images/my-more.png"/></div>
+			</a>
+			<a href="#">
+				<div class="my-list-icon"><img src="images/my-l5.png"/></div>
+				<div class="my-list-tit">设置支付密码</div>
+				<div class="my-list-r"><img src="images/my-more.png"/></div>
+			</a>
+			<a href="#">
+				<div class="my-list-icon"><img src="images/my-l6.png"/></div>
+				<div class="my-list-tit">我的银行卡</div>
+				<div class="my-list-r"><img src="images/my-more.png"/></div>
+			</a>
+			<a href="#">
+				<div class="my-list-icon"><img src="images/my-l7.png"/></div>
+				<div class="my-list-tit">我的邀请码</div>
+				<div class="my-list-r"><img src="images/my-more.png"/></div>
+			</a>
+		</div>
+		<a class="btn-q1 my-exit" href="javascript:">退出账号</a>
+	</div>
+	<script src="js/modules/jquery.min.js"></script>
+	<script src="js/modules/swiper-3.3.1.jquery.min.js"></script>
+	<script src="js/modules/echarts.min.js"></script>
+	<script>
+		var mySwiper = new Swiper ('.swiper-container', {
+		    pagination: '.swiper-pagination',
+	  	})
+		
+		var myChart2 = echarts.init(document.getElementById('sy-echarts2'));
+        option2 = {
+		    color:['#FFB8BA','#F96064'],
+		    legend: {
+		        data:[
+		        		{name:'六斤平台收益'},
+		        		{name:'银行活期收益'},
+		        		
+		        	],
+		        top:'7px',
+		        left:'10px',
+		        orient: 'vertical',
+		        z:20,
+		    },
+		    grid: {
+		        left: '20px',
+		        right: '20px',
+		        bottom: '3%',
+		        top: '30px',
+		        containLabel: true
+		    },
+		    xAxis : [
+		        {
+		            type : 'category',
+		            boundaryGap : false,
+		            splitLine: {
+			            show: false,
+			        },
+			        axisTick: {
+			            show: false,
+			        },
+		            data : ['今天','2020年','2022年','2024年','2026年','2028年','2030年']
+		        }
+		    ],
+		    yAxis : [
+		        {
+		            type : 'value',
+		            position:'right',
+		            name : '单位（万元）',
+		            splitLine: {
+			            show: false,
+			        },
+			        axisTick: {
+			            show: false,
+			        },
+			        splitNumber: 4,
+		        }
+		    ],
+		    series : [
+		        {
+		            name:'银行活期收益',
+		            type:'line',
+		            z:2,
+		            sampling: 'average',
+		            areaStyle: {
+		            		normal: {
+		            			color: '#FFB8BA',
+		            			opacity:1,
+		            		},
+		            	},
+		            	lineStyle: {
+		            		normal: {
+		            			width:1,
+		            			color: '#FFB8BA',
+		            		},
+		            	},
+		            	smooth: true,
+		            	symbol: 'none',
+		            data:[0.2, 0.6, 1, 1.4, 1.8, 2.2, 2.4]
+		        },
+		        {
+		            name:'六斤平台收益',
+		            type:'line',
+		            z:1,
+		            areaStyle: {
+		            		normal: {
+		            			color: '#F96064',
+		            			opacity:1,
+		            		},
+		            	},
+		            	lineStyle: {
+		            		normal: {
+		            			width:1,
+		            			color: '#F96064',
+		            		},
+		            	},
+		            	smooth: true,
+		            	symbol: 'none',
+		            data:[0.2, 0.8, 1.5, 2, 3, 4, 5],
+		        }
+		    ]
+		};
+        myChart2.setOption(option2);
+	</script>
+</body>
+</html>

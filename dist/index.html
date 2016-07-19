@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<title>六斤金融</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="js/modules/echarts.min.js"></script>
+</head>
+<body>
+	<div class="navbar">
+		<a class="active" href="#">
+			<div class="bar-icon bar-icon1"></div>
+			<p>首页</p>
+		</a>
+		<a href="#">
+			<div class="bar-icon bar-icon2"></div>
+			<p>投资</p>
+		</a>
+		<a href="#">
+			<div class="bar-icon bar-icon3"></div>
+			<p>我的</p>
+		</a>
+	</div>
+	<div class="main">
+		<div id="sy-echarts" style="height:200px;"></div>
+		<div class="ino-ts">您还未注册，上图所示仅仅举例</div>
+		<div class="ino-ms">六斤金融是一家金融撮合交易平台，你可以在这里找到投资收益性价比最高的投资产品，让你的资产获得稳定持久的增长</div>
+		<div class="ino-btn">
+			<a class="ino-register" href="#">马上注册</a>
+		</div>
+	</div>
+	<script type="text/javascript">
+        var myChart1 = echarts.init(document.getElementById('sy-echarts'));
+        option1 = {
+		    color:['#4A90E2','#41CEB4'],
+		    title: {
+		        text: '六斤平台的可能30年收益',
+		        left: '10px',
+		        top: '6px',
+		        textStyle: {
+		        		color: '#333',
+		        		fontSize: 14,
+		        }
+		    },
+		    legend: {
+		        data:[
+		        		{name:'六斤平台收益'},
+		        		{name:'银行活期收益'},
+		        		
+		        	],
+		        top:'40px',
+		        left:'10px',
+		        orient: 'vertical',
+		        z:20,
+		    },
+		    grid: {
+		        left: '20px',
+		        right: '20px',
+		        bottom: '3%',
+		        top: '40px',
+		        containLabel: true
+		    },
+		    xAxis : [
+		        {
+		            type : 'category',
+		            boundaryGap : false,
+		            splitLine: {
+			            show: false,
+			        },
+			        axisTick: {
+			            show: false,
+			        },
+		            data : ['今天','2020年','2022年','2024年','2026年','2028年','2030年']
+		        }
+		    ],
+		    yAxis : [
+		        {
+		            type : 'value',
+		            position:'right',
+		            name : '单位（万元）',
+		            splitLine: {
+			            show: false,
+			        },
+			        axisTick: {
+			            show: false,
+			        },
+			        splitNumber: 4,
+		        }
+		    ],
+		    series : [
+		        {
+		            name:'银行活期收益',
+		            type:'line',
+		            z:2,
+		            sampling: 'average',
+		            areaStyle: {
+		            		normal: {
+		            			color: '#4A90E2',
+		            			opacity:1,
+		            		},
+		            	},
+		            	lineStyle: {
+		            		normal: {
+		            			width:1,
+		            			color: '#4A90E2',
+		            		},
+		            	},
+		            	smooth: true,
+		            	symbol: 'none',
+		            data:[0.2, 0.6, 1, 1.4, 1.8, 2.2, 2.4]
+		        },
+		        {
+		            name:'六斤平台收益',
+		            type:'line',
+		            z:1,
+		            areaStyle: {
+		            		normal: {
+		            			color: '#41CEB4',
+		            			opacity:1,
+		            		},
+		            	},
+		            	lineStyle: {
+		            		normal: {
+		            			width:1,
+		            			color: '#41CEB4',
+		            		},
+		            	},
+		            	smooth: true,
+		            	symbol: 'none',
+		            data:[0.2, 0.8, 1.5, 2, 3, 4, 5],
+		        }
+		    ]
+		};
+        myChart1.setOption(option1);
+    </script>
+</body>
+</html>
